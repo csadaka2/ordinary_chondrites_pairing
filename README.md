@@ -49,7 +49,7 @@ Make sure you have Python installed. You can download it from [python.org](https
 1. **Clone the repository**:
 
     ```sh
-    git clone [https://github.com/yourusername/your-repo.git](https://github.com/csadaka2/ordinary_chondrites_pairing)
+    git clone [pairing_OC](https://github.com/csadaka2/ordinary_chondrites_pairing)
     ```
 
 2. **Navigate to the project directory**:
