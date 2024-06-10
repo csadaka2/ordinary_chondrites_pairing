@@ -92,9 +92,12 @@ Ensure you have a `requirements.txt` [Requirements](https://github.com/csadaka2/
 
 To use the Ordinary Chondrites Pairing Model, follow these steps:
 
-import pandas as pd
-import numpy as np
-import itertools
+1. **Import Dependencies**:
+
+   ```python
+   import pandas as pd
+   import numpy as np
+   import itertools
 
 # Read data from CSV file into a DataFrame
 data_test = pd.read_csv('meteorite_data.csv', delimiter=';')
@@ -143,6 +146,7 @@ mean_probability_test = np.mean(above_diagonal_values_test)
 print("Mean Probability of Pairing: {:.2f}".format(mean_probability_test))
 print("Number of H Chondrites Before Pairing: {}".format(len(data_test)))
 print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_test) * (1 - mean_probability_test)))
+
 
 
 4. **Experiment and Customize**:
