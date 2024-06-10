@@ -32,6 +32,7 @@ p=e^(-〖(((xA-xB))/2σ)〗^2 )
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-
-
+Feel free to reach out with any questions or feedback:
+- Carine Sadaka : sadaka@cerege.fr or carinesadaka123@gmail.com
+- Pierre Sempéré : pierre.sempere.01@gmail.com
 
