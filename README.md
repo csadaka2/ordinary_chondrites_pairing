@@ -23,7 +23,6 @@ This model can be used for a quick pairing assessment of a large number of meteo
 We consider that two meteorites from different groups cannot be paired, so we separated H, L, and LL chondrites. We also assume that unequilibrated ordinary chondrites of type 3 cannot be paired with equilibrated chondrites. 
 The pairing code calculates a factor P which reflects the likelihood of two meteorites being paired, using the following equation:
 > 
-> ## Mathematical Equation
 > Here is a relevant equation used in this project. The formula calculates the weighted probability of pairing for two meteorites based on given criteria.
 >
 > \[ P = \left( \prod_i p_i^{w_i} \right)^{\frac{1}{\sum w_i}} \]
