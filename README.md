@@ -49,7 +49,7 @@ Make sure you have Python installed. You can download it from [python.org](https
 1. **Clone the repository**:
 
     ```sh
-    git clone https://github.com/yourusername/your-repo.git
+    git clone [https://github.com/yourusername/your-repo.git](https://github.com/csadaka2/ordinary_chondrites_pairing)
     ```
 
 2. **Navigate to the project directory**:
@@ -86,7 +86,6 @@ Make sure you have Python installed. You can download it from [python.org](https
 
 Ensure you have a `requirements.txt` file in the root directory of your project that includes the following:
 
-```txt
 numpy
 pandas
 
