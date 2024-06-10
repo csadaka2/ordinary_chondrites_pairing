@@ -10,6 +10,7 @@ This model can be used for a quick pairing assessment of a large number of meteo
 - [Usage](#usage)
 - [Example notebook](#examplenb)
 - [Contributing](#contributing)
+- [References](#references)
 - [License](#license)
 - [Contact](#contact)
 
@@ -25,4 +26,12 @@ Here, pi is the probability of pairing for two meteorites for the given criterio
 Additionally, each criterion was assigned a probability function. 
 For the weathering grade, petrographic type, and inter-meteorite distance, we applied a discrete function. Magnetic susceptibility, fayalite content, and ferrosilite content probability functions follow a Gaussian distribution. Therefore, for these properties, the factor pi can be computed as the probability that two measurements of a given properties for two meteorites (xA and xB) are from the Gaussian distribution with a standard deviation 𝜎 and a mean value of (xA+xB)/2:
 p=e^(-〖(((xA-xB))/2σ)〗^2 )
+
+
+## License
+
+
+## Contact
+
+
 
