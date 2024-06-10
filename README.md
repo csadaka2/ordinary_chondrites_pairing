@@ -1,6 +1,6 @@
 # Pairing of ordinary chondrites
 
-This project is a model using a probabilistic approach to estimate the pairing between ordianry chondrites based on the model developepd by Hutzler et al. (2016) doi:  https://doi.org/10.1111/maps.12607
+This project is a model using a probabilistic approach to estimate the pairing between ordianry chondrites based on the model developepd by Hutzler et al. (2016) [DOI: 10.1111/maps.12607](https://doi.org/10.1111/maps.12607)
 This model can be used for a quick pairing assessment of a large number of meteorites.
 
 ## Table of Contents
@@ -49,7 +49,7 @@ Make sure you have Python installed. You can download it from [python.org](https
 1. **Clone the repository**:
 
     ```sh
-    git clone [pairing_OC](https://github.com/csadaka2/ordinary_chondrites_pairing)
+    git clone https://github.com/csadaka2/ordinary_chondrites_pairing
     ```
 
 2. **Navigate to the project directory**:
@@ -84,18 +84,58 @@ Make sure you have Python installed. You can download it from [python.org](https
 
 ### requirements.txt
 
-Ensure you have a `requirements.txt` file in the root directory of your project that includes the following:
-
-numpy
-pandas [Requirements](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/requirements.txt)
+Ensure you have a `requirements.txt` [Requirements](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/requirements.txt) file in the root directory of your project that includes **numpy** and **pandas**
 
 
 
 ## Usage
+## Usage
+
+To use the Ordinary Chondrites Pairing Model, follow these steps:
+
+1. **Prepare Data**:
+
+    Ensure you have the necessary data on the meteorites you want to assess for pairing. The data should include petrographic type, weathering grade, mineral content, magnetic susceptibility, and inter-meteorite distances.
+
+2. **Run the Pairing Model**:
+
+    - Import the necessary modules in your Python script or notebook:
+
+        ```python
+        import pairing_model
+        ```
+
+    - Instantiate the `PairingModel` class:
+
+        ```python
+        model = pairing_model.PairingModel()
+        ```
+
+    - Prepare your data in a suitable format and pass it to the `pair` method of the `PairingModel` instance:
+
+        ```python
+        pair_matrix = model.pair(meteorite_data)
+        ```
+
+    Here, `meteorite_data` should be a pandas DataFrame containing the data for each meteorite.
+
+3. **Interpret Results**:
+
+    The `pair` method returns a symmetrical matrix (`pair_matrix`) displaying the pairing factors between meteorites. Higher pairing factors indicate a higher likelihood of pairing between two meteorites.
+
+
+4. **Experiment and Customize**:
+
+    Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. You can modify the code to incorporate additional criteria or refine existing ones.
+
+
 ## Example notebook
 Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
 ## Contributing
 ## References
+- Hutzler, A., Bouvier, A., & Devouard, B. (2016). [Description of a very dense meteorite collection area in western Atacama: Insight into the long-term composition of the meteorite flux to Earth](https://doi.org/10.1111/maps.12607). Meteoritics & Planetary Science, 51(8), 1512–1524.
+- Benoit, P. H., Sears, D. W. G., & Sears, H. (2000). A probabilistic technique for the quantitative determination of meteorite pairings. Meteoritics & Planetary Science, 35(6), 1275–1280.
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
