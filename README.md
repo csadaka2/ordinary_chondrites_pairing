@@ -87,7 +87,7 @@ Make sure you have Python installed. You can download it from [python.org](https
 Ensure you have a `requirements.txt` file in the root directory of your project that includes the following:
 
 numpy
-pandas
+pandas [Requirements](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/requirements.txt)
 
 
 
