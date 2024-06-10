@@ -145,7 +145,7 @@ for combination in combinations_test:
 ```
 4. **Estimate Meteorites After Pairing:**
 
-Extract values above the diagonal of the pairing matrix, calculate the mean of the pairing probabilities, and estimate the number of meteorites after pairing**:
+Extract values above the diagonal of the pairing matrix, calculate the mean of the pairing probabilities, and estimate the number of meteorites after pairing:
 ```python
 # Extract values above the diagonal of the pairing matrix
 pairing_values_test = df_pairing_test.values
@@ -163,9 +163,8 @@ print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_t
 
 ## Contributing
 **Experiment and Customize**:
-
-    Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. 
-    You can modify the code to incorporate additional criteria or refine existing ones.
+Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. 
+You can modify the code to incorporate additional criteria or refine existing ones.
 
 
 ## Example notebook
