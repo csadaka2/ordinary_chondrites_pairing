@@ -34,6 +34,13 @@ The pairing code calculates a factor P which reflects the likelihood of two mete
 > p=e^(-[(xA-xB)/2σ]^2 )
 > 
 > The code returns a symmetrical matrix displaying the pairing factors. These estimates remain qualitative as pairing can never be confirmed with absolute certainty in very dense collection areas, even by checking individual pairs under a microscope. Additional criteria could be used for more accurate diagnostic of this pairing code: shock stage, presence or absence of specific petrographic features (polycrystallinity of troilite, presence of shock veins, presence of melt pockets, …)
+
+
+## Example notebook
+Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
+## Contributing
+## References
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
