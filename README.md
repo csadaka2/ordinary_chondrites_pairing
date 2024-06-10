@@ -36,6 +36,63 @@ The pairing code calculates a factor P which reflects the likelihood of two mete
 > The code returns a symmetrical matrix displaying the pairing factors. These estimates remain qualitative as pairing can never be confirmed with absolute certainty in very dense collection areas, even by checking individual pairs under a microscope. Additional criteria could be used for more accurate diagnostic of this pairing code: shock stage, presence or absence of specific petrographic features (polycrystallinity of troilite, presence of shock veins, presence of melt pockets, …)
 
 
+## Installation
+
+To get started with this project, follow these steps to set up your environment and install the necessary dependencies.
+
+### Prerequisites
+
+Make sure you have Python installed. You can download it from [python.org](https://www.python.org/).
+
+### Steps
+
+1. **Clone the repository**:
+
+    ```sh
+    git clone https://github.com/yourusername/your-repo.git
+    ```
+
+2. **Navigate to the project directory**:
+
+    ```sh
+    cd your-repo
+    ```
+
+3. **Create a virtual environment** (optional but recommended):
+
+    ```sh
+    python -m venv venv
+    ```
+
+4. **Activate the virtual environment**:
+
+    On Windows:
+    ```sh
+    venv\Scripts\activate
+    ```
+
+    On macOS and Linux:
+    ```sh
+    source venv/bin/activate
+    ```
+
+5. **Install the required dependencies**:
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+### requirements.txt
+
+Ensure you have a `requirements.txt` file in the root directory of your project that includes the following:
+
+```txt
+numpy
+pandas
+
+
+
+## Usage
 ## Example notebook
 Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
 ## Contributing
