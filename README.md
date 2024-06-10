@@ -89,39 +89,60 @@ Ensure you have a `requirements.txt` [Requirements](https://github.com/csadaka2/
 
 
 ## Usage
-## Usage
 
 To use the Ordinary Chondrites Pairing Model, follow these steps:
 
-1. **Prepare Data**:
+import pandas as pd
+import numpy as np
+import itertools
 
-    Ensure you have the necessary data on the meteorites you want to assess for pairing. The data should include petrographic type, weathering grade, mineral content, magnetic susceptibility, and inter-meteorite distances.
+# Read data from CSV file into a DataFrame
+data_test = pd.read_csv('meteorite_data.csv', delimiter=';')
 
-2. **Run the Pairing Model**:
+# Create a list to store instances of the Meteorite class
+meteorites_list_test = []
 
-    - Import the necessary modules in your Python script or notebook:
+# Iterate over each row in the DataFrame to create Meteorite instances
+for index, row in data_test.iterrows():
+    meteorites_list_test.append(
+        Meteorite(
+            name=row["Name"],
+            position=(row["Latitude"], row["Longitude"]),
+            petrographic_type=row["Petrographic Type"],
+            weathering_grade=row["Weathering Grade"],
+            fa_content=row["Fayalite Content"],
+            fs_content=row["Ferrosilite Content"],
+            mag_sus=row["Magnetic Susceptibility"]
+        )
+    )
 
-        ```python
-        import pairing_model
-        ```
+# Generate all combinations of length 2 from meteorites_list_test
+combinations_test = list(itertools.combinations(meteorites_list_test, 2))
 
-    - Instantiate the `PairingModel` class:
+# Create a DataFrame to store pairing probabilities
+df_pairing_test = pd.DataFrame(index=meteorites_list_test, columns=meteorites_list_test)
 
-        ```python
-        model = pairing_model.PairingModel()
-        ```
+# Convert index and columns to strings
+df_pairing_test.index = df_pairing_test.index.astype(str)
+df_pairing_test.columns = df_pairing_test.columns.astype(str)
 
-    - Prepare your data in a suitable format and pass it to the `pair` method of the `PairingModel` instance:
+# Calculate pairing probabilities for each combination and update the DataFrame
+for combination in combinations_test:
+    pairing_proba = calculate_pairing_probability(met_1=combination[0], met_2=combination[1])
+    df_pairing_test.at[str(combination[0]), str(combination[1])] = pairing_proba
+    df_pairing_test.at[str(combination[1]), str(combination[0])] = pairing_proba
 
-        ```python
-        pair_matrix = model.pair(meteorite_data)
-        ```
+# Extract values above the diagonal of the pairing matrix
+pairing_values_test = df_pairing_test.values
+above_diagonal_values_test = pairing_values_test[np.triu_indices_from(pairing_values_test, k=1)]
 
-    Here, `meteorite_data` should be a pandas DataFrame containing the data for each meteorite.
+# Calculate the mean of the pairing probabilities above the diagonal
+mean_probability_test = np.mean(above_diagonal_values_test)
 
-3. **Interpret Results**:
-
-    The `pair` method returns a symmetrical matrix (`pair_matrix`) displaying the pairing factors between meteorites. Higher pairing factors indicate a higher likelihood of pairing between two meteorites.
+# Print the mean probability and estimated number of meteorites after pairing
+print("Mean Probability of Pairing: {:.2f}".format(mean_probability_test))
+print("Number of H Chondrites Before Pairing: {}".format(len(data_test)))
+print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_test) * (1 - mean_probability_test)))
 
 
 4. **Experiment and Customize**:
