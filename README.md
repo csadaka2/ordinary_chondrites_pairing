@@ -160,9 +160,11 @@ print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_t
 ```
 
 
-4. **Experiment and Customize**:
+## Contributing
+**Experiment and Customize**:
 
-    Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. You can modify the code to incorporate additional criteria or refine existing ones.
+    Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. 
+    You can modify the code to incorporate additional criteria or refine existing ones.
 
 
 ## Example notebook
