@@ -24,13 +24,11 @@ We consider that two meteorites from different groups cannot be paired, so we se
 The pairing code calculates a factor P which reflects the likelihood of two meteorites being paired, using the following equation:
 > 
 > ## Mathematical Equation
-Here is a relevant equation used in this project. The formula calculates the weighted probability of pairing for two meteorites based on given criteria.
+> Here is a relevant equation used in this project. The formula calculates the weighted probability of pairing for two meteorites based on given criteria.
 >
-\[ 
-P = \left( \prod_i p_i^{w_i} \right)^{\frac{1}{\sum w_i}} 
-\]
+> \[ P = \left( \prod_i p_i^{w_i} \right)^{\frac{1}{\sum w_i}} \]
 >
-Here, \( p_i \) is the probability of pairing for two meteorites for the given criterion \( i \), and \( w_i \) is the weight assigned for each criterion \( i \).
+> Here, \( p_i \) is the probability of pairing for two meteorites for the given criterion \( i \), and \( w_i \) is the weight assigned for each criterion \( i \).
 >
 > Given that some criteria are more robust than others, a different weight was assigned to each. Magnetic susceptibility, petrographic type, fayalite content of olivine, and ferrosilite content of low-Ca pyroxene were given a weight of 2, while distance, and weathering grade were given a weight of 1. Missing criteria were assigned a weight of zero for mathematical homogeneity.
 >
