@@ -100,9 +100,9 @@ To use the Ordinary Chondrites Pairing Model, follow these steps:
    import itertools
    ```
 
-2. **Read Data and Create Meteorite Instances:
+2. **Read Data and Create Meteorite Instances**:
 
-Read data from a CSV file into a DataFrame and create instances of the Meteorite class. **:
+Read data from a CSV file into a DataFrame and create instances of the Meteorite class.
    ```python
 data_test = pd.read_csv('meteorite_data.csv', delimiter=';')
 
@@ -123,9 +123,9 @@ for index, row in data_test.iterrows():
         )
     )
 ```
-3. **Calculate Pairing Probabilities:
+3. **Calculate Pairing Probabilities**:
 
-Generate all combinations of length 2 from the list of Meteorite instances, calculate pairing probabilities for each combination, and update a DataFrame to store the probabilities.**:
+Generate all combinations of length 2 from the list of Meteorite instances, calculate pairing probabilities for each combination, and update a DataFrame to store the probabilities.
 ```python
 # Generate all combinations of length 2 from meteorites_list_test
 combinations_test = list(itertools.combinations(meteorites_list_test, 2))
@@ -143,9 +143,10 @@ for combination in combinations_test:
     df_pairing_test.at[str(combination[0]), str(combination[1])] = pairing_proba
     df_pairing_test.at[str(combination[1]), str(combination[0])] = pairing_proba
 ```
-4. **Estimate Meteorites After Pairing:
-```python
+4. **Estimate Meteorites After Pairing:**
+
 Extract values above the diagonal of the pairing matrix, calculate the mean of the pairing probabilities, and estimate the number of meteorites after pairing**:
+```python
 # Extract values above the diagonal of the pairing matrix
 pairing_values_test = df_pairing_test.values
 above_diagonal_values_test = pairing_values_test[np.triu_indices_from(pairing_values_test, k=1)]
