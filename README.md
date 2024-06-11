@@ -4,7 +4,7 @@
 ![pairing_meme](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_meme.png)
 
 
-This project is a model using a probabilistic approach to estimate the pairing between ordianry chondrites based on the model developepd by Hutzler et al. (2016).
+This project is a probabilistic model to estimate the pairing between ordianry chondrites based on the model developped by Hutzler et al. (2016).
 This model can be used for a quick pairing assessment of a large number of meteorites.
 
 ## Table of Contents
@@ -20,15 +20,12 @@ This model can be used for a quick pairing assessment of a large number of meteo
 - [Credits](#credits)
 
 ## Introduction
-Meteoroids often undergo fragmentation during their atmospheric entry, resulting in the fall of multiple stones.Moreover, individual stones may fragment on the Earth’s surface due to alteration processes. Consequently, multiple fragments from the same meteorite are often found scattered within a geographical area called strewnfield.
-In dense collection areas, pairing these fragments is challenging and time-consuming in terms of data acquisition. However, pairing assessment remains extremely important in any study involving a large meteorite collection, as it can reduce statistical bias and prevent duplicate laboratory analyses (Scott, 1984). Pairing is crucial mostly for equilibrated ordinary chondrites, which are the most abundant types of meteorites, and pairing assessment could lead to a staggering different possible pairs, making it unrealistic to check each pair of meteorites individually.
-For these reasons, we decided to tackle the pairing problem using a probability approach with a model similar to that developed by Benoit et al. (2000) and Hutzler et al. (2016). The model can be modified accordingly to suit other collections and search areas. Parameters can be easily modified, removed and/or added.
+Meteoroids often undergo fragmentation either during their atmospheric entry or on the Earth’s surface due to alteration processes. Consequently, multiple fragments from the same meteorite are often found scattered within a geographical area called strewnfield.
+In dense collection areas, pairing these fragments is challenging and time-consuming in terms of data acquisition. But pairing assessment remains extremely important in any study involving a large meteorite collection, as it can reduce statistical bias and prevent duplicate laboratory analyses (Scott, 1984). Pairing is crucial mostly for equilibrated ordinary chondrites, which are the most abundant types of meteorites, and pairing assessment could lead to a staggering different possible pairs, making it unrealistic to check each pair of meteorites individually. For these reasons, we decided to tackle the pairing problem using a probability approach with a model similar to that developed by Benoit et al. (2000) and Hutzler et al. (2016). The model can be modified accordingly to suit other collections and search areas. Parameters can be easily modified, removed and/or added.
 
-Among the main criteria used in the literature for ordinary chondrites pairing (Benoit et al., 2000; Schlüter et al., 2002), our pairing code incorporates the petrographic type (Van Schmus & Wood, 1967), the weathering grade (Wlotzka, 1993), the fayalite content of olivine, the ferrosilite content of low-Ca pyroxene, the magnetic susceptibility, and the distance between stones. 
-We consider that two meteorites from different groups cannot be paired, so we separated H, L, and LL chondrites. We also assume that unequilibrated ordinary chondrites of type 3 cannot be paired with equilibrated chondrites. 
+Among the main criteria used in the literature for ordinary chondrites pairing (Benoit et al., 2000; Schlüter et al., 2002), our pairing code includes the petrographic type (Van Schmus & Wood, 1967), the weathering grade (Wlotzka, 1993), the fayalite content of olivine, the ferrosilite content of low-Ca pyroxene, the magnetic susceptibility, and the distance between stones. We consider that two meteorites from different groups cannot be paired, so we separated H, L, and LL chondrites. We also assume that unequilibrated ordinary chondrites of type 3 cannot be paired with equilibrated chondrites. 
 The pairing code calculates a factor P which reflects the likelihood of two meteorites being paired, using the following equation:
 P = (Πipiwi ) 1 / ∑wi
-
 Here, *pi* is the probability of pairing for two meteorites for the given criterion i, and *wi* is the weight assigned for each criterion i. 
 
 Given that some criteria are more robust than others, a different weight was assigned to each. Magnetic susceptibility, petrographic type, fayalite content of olivine, and ferrosilite content of low-Ca pyroxene were given a weight of 2, while distance, and weathering grade were given a weight of 1. Missing criteria were assigned a weight of zero for mathematical homogeneity.
