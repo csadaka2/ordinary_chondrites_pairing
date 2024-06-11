@@ -25,8 +25,7 @@ In dense collection areas, pairing these fragments is challenging and time-consu
 
 Among the main criteria used in the literature for ordinary chondrites pairing (Benoit et al., 2000; Schlüter et al., 2002), our pairing code includes the petrographic type (Van Schmus & Wood, 1967), the weathering grade (Wlotzka, 1993), the fayalite content of olivine, the ferrosilite content of low-Ca pyroxene, the magnetic susceptibility, and the distance between stones. We consider that two meteorites from different groups cannot be paired, so we separated H, L, and LL chondrites. We also assume that unequilibrated ordinary chondrites of type 3 cannot be paired with equilibrated chondrites. 
 The pairing code calculates a factor P which reflects the likelihood of two meteorites being paired, using the following equation:
-P = (Πipiwi ) 1 / ∑wi
-Here, *pi* is the probability of pairing for two meteorites for the given criterion i, and *wi* is the weight assigned for each criterion i. 
+P = (Πipiwi ) 1 / ∑wi ; here, *pi* is the probability of pairing for two meteorites for the given criterion i, and *wi* is the weight assigned for each criterion i. 
 
 Given that some criteria are more robust than others, a different weight was assigned to each. Magnetic susceptibility, petrographic type, fayalite content of olivine, and ferrosilite content of low-Ca pyroxene were given a weight of 2, while distance, and weathering grade were given a weight of 1. Missing criteria were assigned a weight of zero for mathematical homogeneity.
 
