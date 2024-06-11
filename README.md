@@ -15,7 +15,7 @@ This model can be used for a quick pairing assessment of a large number of meteo
 - [Contact](#contact)
 
 ## Introduction
-> Meteoroids often undergo fragmentation during their atmospheric entry, resulting in the fall of multiple stones.Moreover, individual stones may fragment on the Earth’s surface due to alteration processes. Consequently, multiple fragments from the same meteorite are often found scattered within a geographical area called strewnfield.
+Meteoroids often undergo fragmentation during their atmospheric entry, resulting in the fall of multiple stones.Moreover, individual stones may fragment on the Earth’s surface due to alteration processes. Consequently, multiple fragments from the same meteorite are often found scattered within a geographical area called strewnfield.
 > In dense collection areas, pairing these fragments is challenging and time-consuming in terms of data acquisition. However, pairing assessment remains extremely important in any study involving a large meteorite collection, as it can reduce statistical bias and prevent duplicate laboratory analyses (Scott, 1984). Pairing is crucial mostly for equilibrated ordinary chondrites, which are the most abundant types of meteorites, and pairing assessment could lead to a staggering different possible pairs, making it unrealistic to check each pair of meteorites individually.
 > For these reasons, we decided to tackle the pairing problem using a probability approach with a model similar to that developed by Benoit et al. (2000) and Hutzler et al. (2016). The model can be modified accordingly to suit other collections and search areas. Parameters can be easily modified, removed and/or added.
 > 
@@ -89,21 +89,25 @@ Ensure you have a `requirements.txt` [Requirements](https://github.com/csadaka2/
 
 
 ## Usage
-
 To use the Ordinary Chondrites Pairing Model, follow these steps:
 
 1. **Import Dependencies**:
+2. **Read Data and Create Meteorite Instances**: Read data from a CSV file into a DataFrame and create instances of the Meteorite class.
+3. **Calculate Pairing Probabilities**:
+Generate all combinations of length 2 from the list of Meteorite instances, calculate pairing probabilities for each combination, and update a DataFrame to store the probabilities.
+
+4. **Estimate Meteorites After Pairing:**
+
+Extract values above the diagonal of the pairing matrix, calculate the mean of the pairing probabilities, and estimate the number of meteorites after pairing:
+
 
    ```python
+
    import pandas as pd
    import numpy as np
    import itertools
-   ```
 
-2. **Read Data and Create Meteorite Instances**:
-
-Read data from a CSV file into a DataFrame and create instances of the Meteorite class.
-   ```python
+# Read Data
 data_test = pd.read_csv('meteorite_data.csv', delimiter=';')
 
 # Create a list to store instances of the Meteorite class
@@ -122,11 +126,8 @@ for index, row in data_test.iterrows():
             mag_sus=row["Magnetic Susceptibility"]
         )
     )
-```
-3. **Calculate Pairing Probabilities**:
 
-Generate all combinations of length 2 from the list of Meteorite instances, calculate pairing probabilities for each combination, and update a DataFrame to store the probabilities.
-```python
+
 # Generate all combinations of length 2 from meteorites_list_test
 combinations_test = list(itertools.combinations(meteorites_list_test, 2))
 
@@ -142,11 +143,8 @@ for combination in combinations_test:
     pairing_proba = calculate_pairing_probability(met_1=combination[0], met_2=combination[1])
     df_pairing_test.at[str(combination[0]), str(combination[1])] = pairing_proba
     df_pairing_test.at[str(combination[1]), str(combination[0])] = pairing_proba
-```
-4. **Estimate Meteorites After Pairing:**
 
-Extract values above the diagonal of the pairing matrix, calculate the mean of the pairing probabilities, and estimate the number of meteorites after pairing:
-```python
+
 # Extract values above the diagonal of the pairing matrix
 pairing_values_test = df_pairing_test.values
 above_diagonal_values_test = pairing_values_test[np.triu_indices_from(pairing_values_test, k=1)]
@@ -161,15 +159,16 @@ print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_t
 ```
 
 
+
+
+## Example notebook
+Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
+
 ## Contributing
 **Experiment and Customize**:
 Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. 
 You can modify the code to incorporate additional criteria or refine existing ones.
 
-
-## Example notebook
-Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
-## Contributing
 ## References
 - Hutzler, A., Bouvier, A., & Devouard, B. (2016). [Description of a very dense meteorite collection area in western Atacama: Insight into the long-term composition of the meteorite flux to Earth](https://doi.org/10.1111/maps.12607). Meteoritics & Planetary Science, 51(8), 1512–1524.
 - Benoit, P. H., Sears, D. W. G., & Sears, H. (2000). A probabilistic technique for the quantitative determination of meteorite pairings. Meteoritics & Planetary Science, 35(6), 1275–1280.
