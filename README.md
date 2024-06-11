@@ -103,58 +103,56 @@ To use the Ordinary Chondrites Pairing Model, follow these steps:
    import numpy as np
    import itertools
 
-# Read Data
-data_test = pd.read_csv('meteorite_data.csv', delimiter=';')
-
-# Create a list to store instances of the Meteorite class
-meteorites_list_test = []
-
-# Iterate over each row in the DataFrame to create Meteorite instances
-for index, row in data_test.iterrows():
-    meteorites_list_test.append(
-        Meteorite(
-            name=row["Name"],
-            position=(row["Latitude"], row["Longitude"]),
-            petrographic_type=row["Petrographic Type"],
-            weathering_grade=row["Weathering Grade"],
-            fa_content=row["Fayalite Content"],
-            fs_content=row["Ferrosilite Content"],
-            mag_sus=row["Magnetic Susceptibility"]
+    # Read Data
+    data_test = pd.read_csv('meteorite_data.csv', delimiter=';')
+    
+    # Create a list to store instances of the Meteorite class
+    meteorites_list_test = []
+    
+    # Iterate over each row in the DataFrame to create Meteorite instances
+    for index, row in data_test.iterrows():
+        meteorites_list_test.append(
+            Meteorite(
+                name=row["Name"],
+                position=(row["Latitude"], row["Longitude"]),
+                petrographic_type=row["Petrographic Type"],
+                weathering_grade=row["Weathering Grade"],
+                fa_content=row["Fayalite Content"],
+                fs_content=row["Ferrosilite Content"],
+                mag_sus=row["Magnetic Susceptibility"]
+            )
         )
-    )
-
-
-# Generate all combinations of length 2 from meteorites_list_test
-combinations_test = list(itertools.combinations(meteorites_list_test, 2))
-
-# Create a DataFrame to store pairing probabilities
-df_pairing_test = pd.DataFrame(index=meteorites_list_test, columns=meteorites_list_test)
-
-# Convert index and columns to strings
-df_pairing_test.index = df_pairing_test.index.astype(str)
-df_pairing_test.columns = df_pairing_test.columns.astype(str)
-
-# Calculate pairing probabilities for each combination and update the DataFrame
-for combination in combinations_test:
-    pairing_proba = calculate_pairing_probability(met_1=combination[0], met_2=combination[1])
-    df_pairing_test.at[str(combination[0]), str(combination[1])] = pairing_proba
-    df_pairing_test.at[str(combination[1]), str(combination[0])] = pairing_proba
-
-
-# Extract values above the diagonal of the pairing matrix
-pairing_values_test = df_pairing_test.values
-above_diagonal_values_test = pairing_values_test[np.triu_indices_from(pairing_values_test, k=1)]
-
-# Calculate the mean of the pairing probabilities above the diagonal
-mean_probability_test = np.mean(above_diagonal_values_test)
-
-# Print the mean probability and estimated number of meteorites after pairing
-print("Mean Probability of Pairing: {:.2f}".format(mean_probability_test))
-print("Number of H Chondrites Before Pairing: {}".format(len(data_test)))
-print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_test) * (1 - mean_probability_test)))
-```
-
-
+    
+    
+    # Generate all combinations of length 2 from meteorites_list_test
+    combinations_test = list(itertools.combinations(meteorites_list_test, 2))
+    
+    # Create a DataFrame to store pairing probabilities
+    df_pairing_test = pd.DataFrame(index=meteorites_list_test, columns=meteorites_list_test)
+    
+    # Convert index and columns to strings
+    df_pairing_test.index = df_pairing_test.index.astype(str)
+    df_pairing_test.columns = df_pairing_test.columns.astype(str)
+    
+    # Calculate pairing probabilities for each combination and update the DataFrame
+    for combination in combinations_test:
+        pairing_proba = calculate_pairing_probability(met_1=combination[0], met_2=combination[1])
+        df_pairing_test.at[str(combination[0]), str(combination[1])] = pairing_proba
+        df_pairing_test.at[str(combination[1]), str(combination[0])] = pairing_proba
+    
+    
+    # Extract values above the diagonal of the pairing matrix
+    pairing_values_test = df_pairing_test.values
+    above_diagonal_values_test = pairing_values_test[np.triu_indices_from(pairing_values_test, k=1)]
+    
+    # Calculate the mean of the pairing probabilities above the diagonal
+    mean_probability_test = np.mean(above_diagonal_values_test)
+    
+    # Print the mean probability and estimated number of meteorites after pairing
+    print("Mean Probability of Pairing: {:.2f}".format(mean_probability_test))
+    print("Number of H Chondrites Before Pairing: {}".format(len(data_test)))
+    print("Estimated Number of H Chondrites After Pairing: {:.0f}".format(len(data_test) * (1 - mean_probability_test)))
+    ```
 
 
 ## Example notebook
@@ -166,8 +164,11 @@ Feel free to experiment with different parameters, adjust weights, or customize 
 You can modify the code to incorporate additional criteria or refine existing ones.
 
 ## References
-- Hutzler, A., Bouvier, A., & Devouard, B. (2016). [Description of a very dense meteorite collection area in western Atacama: Insight into the long-term composition of the meteorite flux to Earth](https://doi.org/10.1111/maps.12607). Meteoritics & Planetary Science, 51(8), 1512–1524.
-- Benoit, P. H., Sears, D. W. G., & Sears, H. (2000). A probabilistic technique for the quantitative determination of meteorite pairings. Meteoritics & Planetary Science, 35(6), 1275–1280.
+- Benoit, P H, D. W. G. Sears, J.M.C. Akridge, P. A. Bland, F.J. Berry, and C.T. Pillinger. 2000. “The Non-Trivial Problem of Meteorite Pairing.” Meteoritics & Planetary Science 35 (2). Wiley-Blackwell: 393–417. doi:https://doi.org/10.1111/j.1945-5100.2000.tb01785.x.
+- Hutzler, A., J. Gattacceca, P. Rochette, R. Braucher, B. Carro, E. Christensen, C. Cournede, et al. 2016. “Description of a Very Dense Meteorite Collection Area in Western Atacama: Insight into the Long-Term Composition of the Meteorite Flux to Earth.” Meteoritics & Planetary Science 51 (3). Wiley-Blackwell: 468–82. doi:https://doi.org/10.1111/maps.12607.
+- Schlüter, J. , L. Schultz, F. Thiedig, B. O. Al‐Mahdi, and A. E. Abu Aghreb. 2002. “The Dar al Gani Meteorite Field (Libyan Sahara): Geological Setting, Pairing of Meteorites, and Recovery Density.” Meteoritics & Planetary Science 37 (8). Wiley-Blackwell: 1079–93. doi:https://doi.org/10.1111/j.1945-5100.2002.tb00879.x.
+- Van Schmus, W. R., and J. A. Wood. 1967. “A Chemical-Petrologic Classification for the Chondritic Meteorites.” Geochimica et Cosmochimica Acta 31 (5). Elsevier BV: 747–65. doi:https://doi.org/10.1016/s0016-7037(67)80030-9.
+- Wlotzka F. 1993. A weathering scale for the ordinary chondrites (abstract). Meteoritics 28:460. 
 
 
 ## License
