@@ -1,4 +1,4 @@
-# Pairing of ordinary chondrites
+# Ordinary Chondrites Pairing
 
 This project is a model using a probabilistic approach to estimate the pairing between ordianry chondrites based on the model developepd by Hutzler et al. (2016).
 This model can be used for a quick pairing assessment of a large number of meteorites.
@@ -13,6 +13,7 @@ This model can be used for a quick pairing assessment of a large number of meteo
 - [References](#references)
 - [License](#license)
 - [Contact](#contact)
+- [Credits](#credits)
 
 ## Introduction
 Meteoroids often undergo fragmentation during their atmospheric entry, resulting in the fall of multiple stones.Moreover, individual stones may fragment on the Earth’s surface due to alteration processes. Consequently, multiple fragments from the same meteorite are often found scattered within a geographical area called strewnfield.
@@ -178,4 +179,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Feel free to reach out with any questions or feedback:
 - Carine Sadaka : sadaka@cerege.fr or carinesadaka123@gmail.com
 - Pierre Sempéré : pierre.sempere.01@gmail.com
+
+## Credits
+Image was genearted using Canvas
 
