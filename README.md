@@ -158,7 +158,6 @@ To use the Ordinary Chondrites Pairing Model, follow these steps:
 Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
 
 ## Contributing
-**Experiment and Customize**:
 Feel free to experiment with different parameters, adjust weights, or customize the model according to your specific research needs. 
 You can modify the code to incorporate additional criteria or refine existing ones.
 
