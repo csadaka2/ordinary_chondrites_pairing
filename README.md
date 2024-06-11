@@ -1,5 +1,8 @@
-![pairing_meme](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_meme.png)
 # Ordinary Chondrites Pairing
+
+
+![pairing_meme](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_meme.png)
+
 
 This project is a model using a probabilistic approach to estimate the pairing between ordianry chondrites based on the model developepd by Hutzler et al. (2016).
 This model can be used for a quick pairing assessment of a large number of meteorites.
