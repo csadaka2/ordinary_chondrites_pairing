@@ -167,7 +167,7 @@ You can modify the code to incorporate additional criteria or refine existing on
 - Benoit, P H, D. W. G. Sears, J.M.C. Akridge, P. A. Bland, F.J. Berry, and C.T. Pillinger. 2000. “The Non-Trivial Problem of Meteorite Pairing.” Meteoritics & Planetary Science 35 (2). Wiley-Blackwell: 393–417. doi: 10.1111/j.1945-5100.2000.tb01785.x.
 - Hutzler, A., J. Gattacceca, P. Rochette, R. Braucher, B. Carro, E. Christensen, C. Cournede, et al. 2016. “Description of a Very Dense Meteorite Collection Area in Western Atacama: Insight into the Long-Term Composition of the Meteorite Flux to Earth.” Meteoritics & Planetary Science 51 (3). Wiley-Blackwell: 468–82. doi: 10.1111/maps.12607.
 - Schlüter, J. , L. Schultz, F. Thiedig, B. O. Al‐Mahdi, and A. E. Abu Aghreb. 2002. “The Dar al Gani Meteorite Field (Libyan Sahara): Geological Setting, Pairing of Meteorites, and Recovery Density.” Meteoritics & Planetary Science 37 (8). Wiley-Blackwell: 1079–93. doi: 10.1111/j.1945-5100.2002.tb00879.x.
-- Van Schmus, W. R., and J. A. Wood. 1967. “A Chemical-Petrologic Classification for the Chondritic Meteorites.” Geochimica et Cosmochimica Acta 31 (5). Elsevier BV: 747–65. doi:https://doi.org/10.1016/s0016-7037(67)80030-9.
+- Van Schmus, W. R., and J. A. Wood. 1967. “A Chemical-Petrologic Classification for the Chondritic Meteorites.” Geochimica et Cosmochimica Acta 31 (5). Elsevier BV: 747–65. doi: 10.1016/s0016-7037(67)80030-9.
 - Wlotzka F. 1993. A weathering scale for the ordinary chondrites (abstract). Meteoritics 28:460. 
 
 
