@@ -155,7 +155,8 @@ To use the Ordinary Chondrites Pairing Model, follow these steps:
 
 
 ## Example notebook
-Check the example notebook with a test dataset to visuialize the matrix and resulats. 
+Check the example notebook with a test dataset to visuialize the matrix and results. 
+
 Link to an example notebook [Test](https://github.com/csadaka2/ordinary_chondrites_pairing/blob/main/pairing_nb.ipynb)
 
 ## Contributing
