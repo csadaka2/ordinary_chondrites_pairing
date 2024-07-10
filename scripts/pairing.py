@@ -18,8 +18,8 @@ weights = {
 
 # Define the parameter for each criterion (sigma i)
 sigma = {
-    "fayalite_content": 0.51,
-    "ferrosilite_content": 0.54,
+    "fayalite_content": 0.63,
+    "ferrosilite_content": 0.61,
     "magnetic_susceptibility": 0.1
 }
 
