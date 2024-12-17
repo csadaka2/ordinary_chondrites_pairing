@@ -176,9 +176,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 Feel free to reach out with any questions or feedback:
-- Carine Sadaka : sadaka@cerege.fr or carinesadaka123@gmail.com
 - Pierre Sempéré : pierre.sempere.01@gmail.com
+- Carine Sadaka : sadaka@cerege.fr or carinesadaka123@gmail.com
+
 
 ## Credits
 Image was genearted using Canvas
+This project owes a great deal to Pierre Sempéré,  who took the lead on most of the coding and did most of the heavy lifting. Thank you for your hard work and dedication!
 
