@@ -181,6 +181,7 @@ Feel free to reach out with any questions or feedback:
 
 
 ## Credits
-Image was genearted using Canvas
+Image was genearted using Canvas. 
+
 This project owes a great deal to Pierre Sempéré,  who took the lead on most of the coding and did most of the heavy lifting. Thank you for your hard work and dedication!
 
